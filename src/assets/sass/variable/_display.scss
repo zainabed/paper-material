@@ -1,0 +1,15 @@
+$row-alignment: (
+	'none' : 'none',
+	'start': 'flex-start',
+	'center': 'center',
+	'end' : 'flex-end',
+	'space-around': 'space-around',
+	'space-between' : 'space-between'
+);
+$column-alignment: (
+	'none' : 'none',
+	'start': 'flex-start',
+	'center': 'center',
+	'end' : 'flex-end',
+	'stretch' : 'stretch'
+);

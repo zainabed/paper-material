@@ -1,0 +1,11 @@
+node_modules/
+.sass-cache/
+public/dist/
+public/css/
+public/css/build.css
+dist/
+temp/
+sassdoc/
+nbproject/
+docs/build/
+css/

@@ -1,0 +1,65 @@
+.dialog-paper{
+	position: absolute;
+	@include display(flex);
+	@include flex-wrap();
+	@include elevation($dialog-elevation);
+	min-width: $dialog--min-width;
+
+	@include media-query($until: $mobile--breakpoint){
+		max-width: $dialog-mobile--max-width;
+	}
+
+	@include media-query($from: $mobile--breakpoint , $until: $tablet--breakpoint){
+		max-width: $dialog-tablet--max-width;
+	}
+
+	@include media-query($from: $tablet--breakpoint){
+		max-width: $dialog-desktop--max-width;
+	}
+
+	background: $dialog--background;
+	left: 50%;
+	top: 25%;
+	transform: translate(-50%, -50%);
+
+
+}
+
+.dialog-paper-title{
+	padding-left: $dialog--padding;
+	padding-right: $dialog--padding;
+	width: 100%;
+}
+
+.dialog-paper-content{
+	padding-left: $dialog--padding;
+	padding-right: $dialog--padding;
+	padding-bottom: $dialog--padding;
+	@extend .font-body1;
+	width: 100%;
+}
+
+.dialog-actions{
+	width: 100%;
+	@include display(flex);
+	@extend .flex-right;
+
+	.button-paper{
+		height: $dialog-button-paper--height;
+	}
+}
+
+.dialog-actions-stack{
+	@extend .column;
+
+	.button-paper{
+		height: $button-paper--height;
+		margin-top:0;
+		margin-bottom:0;
+		margin-right: $button-paper--margin;
+		&:last-of-type{
+			margin-bottom: $button-paper--margin;
+		}
+	}
+
+}

@@ -1,0 +1,82 @@
+
+.snackbar-paper-container{
+	@extend .font--baseFamily;
+	@include display(flex);
+	position: fixed;
+	bottom:0;
+	width: 100%;
+}
+
+
+.snackbar-paper{
+	background: $snackbar--background;
+	@include display(flex);
+	@extend .font-caption;
+	overflow: hidden;
+	padding-left: $snackbar--padding;
+	padding-right: $snackbar--padding;
+	
+	@include media-query($until: $mobile--breakpoint){
+		width: 100%;
+		text-align: center;
+	}
+
+	@include media-query($from: $mobile--breakpoint){
+		
+		.snackbar-paper-text{
+			min-width: $snackbar-largeDevice--minWidth;
+			max-width: $snackbar-largeDevice--maxWidth;
+			
+		}
+
+		left: 50%;
+		transform: translate(-50%, 0);
+	}
+
+	.button-paper{
+		margin:auto 0 auto $snackbar-button--margin;
+		padding-right:0;
+		padding-left:0;
+	}
+	
+}
+
+.snackbar-paper-singleline{
+	height: $snackbar-singleLine--height;
+
+	padding-top: $snackbar-singleLine--padding ;
+	padding-bottom: $snackbar-singleLine--padding ;
+	@include box-sizing();
+
+}
+
+.snackbar-paper-multiline{
+	height: $snackbar-multiLine--height;
+
+	padding-top: $snackbar-multiLine--padding ;
+	padding-bottom: $snackbar-multiLine--padding ;
+	@include box-sizing();
+
+}
+
+.snackbar-paper-text{
+	@include flex-value(1);
+	font-size: $snackbar--fontSize;
+	line-height: $snackbar-text--lineHeight;
+	color: $color--light;
+
+}
+
+.snackbar-paper-action{
+	@include media-query($until: $mobile--breakpoint){
+		padding-left: $snackbar-text-mobile--padding;
+	}
+
+	@include media-query($from: $mobile--breakpoint){
+		padding-left: $snackbar-text-largeDevice--padding;
+	}
+
+	.action-paper{
+		padding: 0;
+	}
+}

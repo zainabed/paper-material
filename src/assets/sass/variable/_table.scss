@@ -1,0 +1,18 @@
+/// table Style
+$table-paper-header--fontSize: 12px;
+$table-paper-header--height: 56px;
+$table-paper-row--height: 48px;
+$table-paper-row-avatar--height: 56px;
+$table-paper-footer--height: 48px;
+$table-paper-card-header--height: 64px;
+$table-paper-cell--fontSize : 13px;
+$table-paper--color: #000;
+$table-paper--bordercolor: lighten($table-paper--color, 85%);
+$table-paper--border: 1px solid $table-paper--bordercolor;
+$table-paper-row--hovercolor: #EEE;
+$table-paper-row--selectedcolor: #F5F5F5;
+$table-paper--padding: 24px;
+$table-paper-footer-count--width: 40px;
+$table-paper-footer-pagging--padding: 32px;
+$table-paper-cell--right-padding: 56px;
+$table-paper-header--right-padding: 14px;

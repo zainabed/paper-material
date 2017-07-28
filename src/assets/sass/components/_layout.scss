@@ -1,0 +1,11 @@
+/// mobile Layout
+@include media-columns(0, $mobile--breakpoint, $mobile--columns, $mobile--gutter, $Layout--columns--prefix, $mobile--columns--suffix);
+
+/// tablet Layout
+@include media-columns($mobile--breakpoint, $tablet--breakpoint, $tablet--columns, $tablet--gutter, $Layout--columns--prefix, $tablet--columns--suffix);
+
+/// desktop Layout
+@include media-columns($tablet--breakpoint, $desktop--breakpoint, $desktop--columns, $desktop--gutter, $Layout--columns--prefix, $desktop--columns--suffix);
+
+/// Large desktop Layout
+@include media-columns($desktop--breakpoint, 0 , $desktop--large--columns, $desktop--large--gutter, $Layout--columns--prefix, $desktop--large--columns--suffix);

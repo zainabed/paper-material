@@ -1,0 +1,41 @@
+
+
+/**
+ * @ngdoc directive
+ * @module component
+ * @name appbar
+ * @description
+ * Its position is fixed and it will located at top position of web page and will have 100% width.
+ *
+ */
+//
+// Application bar
+// Its position is fixed and it will located at top position of web page and will have 100% width.
+//
+
+.paper-app-bar{
+	right: 0;
+	left: 0;
+	top: 0;
+	width: auto;
+	position: fixed;
+	border-top: 0;
+	@include elevation($appBar--elevation);
+}
+
+
+//
+// Any HTML element follow Appbar will have top margin with respect to screen resolution.
+//
+.paper-app-bar + *{
+
+	// For mobile application
+	@include media-query($until: $mobile--breakpoint){
+		margin-top: $appBar-mobile--height;	
+	}
+	
+	// For large device other then mobile.
+	@include media-query($from: $mobile--breakpoint){
+		margin-top: $appBar-large-device--height;
+	}
+}

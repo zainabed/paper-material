@@ -1,0 +1,12 @@
+@each $name, $color in $colors{
+	.bg-#{$name} {
+		@include background($color);
+		&:hover{
+			@include background($color);
+		}
+	}
+
+	.color-#{$name} {
+		color: $color;
+	}
+}

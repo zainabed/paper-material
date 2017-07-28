@@ -1,0 +1,45 @@
+//
+// @type mixin
+// @desciption
+// If display property is 'flex' then flex value is used to make 
+// html elements adjust their width according to thier parent's width.
+//
+@mixin flex-value($value){
+	flex : $value;
+	-ms-flex: $value;
+	-webkit-flex: $value;
+	-webkit-box-flex: $value;
+	-moz-box-flex: $value;
+}
+
+//
+// @type mixin
+// @description 
+// Wrap HTML elements to next line when they do not fit inside thier parents width.
+//
+// @param $value 
+//
+@mixin flex-wrap($value: wrap){
+	flex-wrap: $value;
+	-ms-flex-wrap: $value;
+}
+
+
+// 
+// @type mixin
+// @description
+// Define flex line direction, possible values are row & column.
+//
+// @param $value
+//
+@mixin flex-direction($value : row){
+	flex-direction: $value;
+	-ms-flex-direction: $value;
+	-webkit-flex-direction: $value;
+}
+
+/// Flex Order
+/// @param {Int} $value - flex itme order value
+@mixin flex-order($value){
+	order: $value;
+}

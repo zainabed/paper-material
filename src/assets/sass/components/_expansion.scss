@@ -1,0 +1,52 @@
+
+.expansion-paper{
+	.list-item-paper{
+		//@extend .divider;
+		padding: 0;
+		@include elevation(1);
+
+		&:hover{
+			background: getColorByName('light-grey');
+			cursor: pointer;
+		}
+	}
+
+	.action-paper{
+		display: none;
+	}
+
+	// Adjust padding of list item. 
+	.list-item-paper-content{
+		padding-left: $expansion-expand-margin;
+	}
+
+	.list-item-paper-sub-icon{
+		margin-right: $expansion-expand-margin;
+	}
+}
+
+.expansion-paper-expand{
+	&:hover{
+			background: getColorByName('white') !important;
+			cursor: initial;
+	}
+	//@include borderStyle('top', $divider--borderWidth, $divider--color);
+  	margin: $expansion-expand-margin 0;
+
+
+  	.expansion-paper-content{
+		@include display();
+	}
+	.action-paper{
+		@include display();
+	}
+}
+
+.expansion-paper-content{
+	padding:0 $expansion-expand-margin $expansion-expand-margin;
+	@include border-style('bottom', $divider--borderWidth, $divider--color);
+	min-height: 100px;
+	display: none;
+	width:100%;
+}
+

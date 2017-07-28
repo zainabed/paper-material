@@ -1,0 +1,24 @@
+{% import "lib/macros.html" as lib -%}
+{% extends "api/api.template.html" %}
+
+{% block additional %}
+  
+  {% block usage %}
+  
+  <div class="usage">
+  {% if doc.usage %}
+    <h2 id="usage" class="font-body2">Usage</h2> 
+    {$ doc.usage | marked $}
+  {%- endif %}
+  </div>
+  {% endblock -%}
+
+  {%- if doc.animations %}
+  <h2 id="animations">Animations</h2>
+  {$ doc.animations | marked $}
+  {$ 'module:ngAnimate.$animate' | link('Click here', doc) $} to learn more about the steps involved in the animation.
+  {%- endif -%}
+
+  {% include "lib/params.template.html" %}
+  {% include "lib/events.template.html" %}
+{% endblock %}

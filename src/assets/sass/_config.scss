@@ -1,0 +1,22 @@
+/// Application Theme , It can light or dark.
+/// @type {String}
+$theme : 'light';
+
+/// Application primary color name.
+/// @type {String}
+$primary-color-name: 'teal';
+
+/// Primary color of application.
+/// @type {Rgba}
+$primary-color: get-color-value($primary-color-name, '500');
+
+/// Secondary color value
+/// @type {Rgba}
+$secondary-color: get-color-value($primary-color-name, '800');
+
+/// Accent / Secondary color of application
+/// @type {Rgba}
+$accent-color: get-color-value('red', 'a200');
+
+// Build application theme
+@include build-app-theme($theme);

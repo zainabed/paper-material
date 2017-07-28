@@ -1,0 +1,38 @@
+{
+  "name": "za-material",
+  "version": "1.0.3",
+  "description": "Web application material design",
+  "main": "index.js",
+  "scripts": {},
+  "author": "Zainul Abedin",
+  "license": "BSD",
+  "devDependencies": {
+    "dgeni": "^0.4.7",
+    "dgeni-packages": "^0.17.1",
+    "extract-comments": "^0.10.1",
+    "gulp": "^3.9.1",
+    "gulp-angular-filesort": "^1.1.1",
+    "gulp-angular-templatecache": "^2.0.0",
+    "gulp-bump": "^2.7.0",
+    "gulp-clean": "^0.3.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-export-comments": "^1.0.1",
+    "gulp-git": "^2.1.0",
+    "gulp-inject": "^4.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-stylelint": "^3.8.0",
+    "gulp-webserver": "^0.9.1",
+    "material-design-icons": "^2.1.1",
+    "require-dir": "^0.3.1",
+    "run-sequence": "^1.2.2",
+    "sassdoc": "^2.2.0",
+    "stream-series": "^0.1.1",
+    "yarg": "^1.0.8"
+  },
+  "dependencies": {
+    "angular": "^1.6.2",
+    "angular-ui-router": "^0.4.2",
+    "sass-mq": "^3.3.2"
+  }
+}

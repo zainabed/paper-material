@@ -1,0 +1,151 @@
+
+.drawer-paper{
+  ///padding: $drawer-paper--padding;
+  background: $color--light;
+
+  @include media-query($until: $mobile--breakpoint){
+  	width: calc(100% - #{$drawer-paper-mobile--leftOffset});
+  }
+
+  @include media-query($from: $mobile--breakpoint){
+  	max-width: $drawer-paper-largeDevice--maxWidth; 
+  }
+
+  @include elevation($drawer--elevation);
+  @include flex-value(1);
+  position: fixed;
+}
+
+
+.drawer-paper-left{
+  height: 100%;
+  left:0;
+  
+}
+
+.drawer-paper-right{
+  height: 100%;
+  right:0;
+ 
+}
+
+.drawer-paper-float.drawer-paper-left{
+  @include elevation($drawer-paper--elevation, 'left');
+}
+.drawer-paper-float.drawer-paper-right{
+ @include elevation($drawer-paper--elevation, 'right');
+}
+
+.drawer-paper-fixed.drawer-paper-left{
+  border-right: 1px solid #eee;
+}
+.drawer-paper-fixed.drawer-paper-right{
+ border-left: 1px solid #eee;
+}
+
+.drawer-paper-fixed{
+
+  @include media-query($until: $desktop--breakpoint){
+    display: none;
+  }
+
+  @include box-shadow(0, 0, 0, $color: #fff);
+  
+  height: 100%;
+
+    .drawer-paper-header{
+      height:  $appBar-large-device--height;
+      @include display(flex);
+      border-bottom: 1px solid #eee;
+      background:#fff;
+      color: $color--dark;
+    }
+
+    .drawer-paper-header-content{
+      width: $drawer-paper-fixed-content--paddingLeft - $drawer-paper--padding;
+      height: 100%;
+      $padding: $appBar-large-device--height - $icon--sizeLarge;
+      padding: $padding/2 0;
+    }
+
+    .drawer-paper-header-text{
+      @include flex-value(1);
+      height: 100%;
+      $padding: $appBar-large-device--height - $font-body2--size;
+      padding: $padding/2 0;
+    }
+}
+
+.drawer-paper-fixed.drawer-paper-left + .page-content {
+   @include media-query($from: $desktop--breakpoint){
+      margin-left: $drawer-paper-largeDevice--maxWidth; 
+    }
+  & > .appBar {
+    @include media-query($from: $desktop--breakpoint){
+      margin-left: $drawer-paper-largeDevice--maxWidth; 
+    }
+  }
+}
+
+.drawer-paper-fixed.drawer-paper-right + .page-content {
+   @include media-query($from: $desktop--breakpoint){
+      margin-right: $drawer-paper-largeDevice--maxWidth; 
+    }
+  & > .appBar {
+    @include media-query($from: $desktop--breakpoint){
+      margin-right: $drawer-paper-largeDevice--maxWidth; 
+    }
+  }
+}
+
+.drawer-paper-clipped{
+  @include media-query($from: $desktop--breakpoint){
+    
+    margin-top: $appBar-large-device--height;
+
+    .drawer-paper-header{
+      display: none;
+    }
+
+    z-index: 1;
+  }
+
+  
+}
+
+.drawer-paper-left.drawer-paper-clipped + .page-content > .appBar {
+    @include media-query($from: $mobile--breakpoint){
+      margin-left: 0; 
+    }
+  
+}
+
+.drawer-paper-right.drawer-paper-clipped + .page-content > .appBar {
+    @include media-query($from: $mobile--breakpoint){
+      margin-right: 0; 
+    }
+  
+}
+
+.drawer-paper-header{
+  padding: 0 $drawer-paper--padding;
+  background:#673AB7;
+  color: $color--light;
+}
+
+.drawer-paper-header-text{
+  padding-top : $drawer-paper-header-text--paddingTop;
+	height: $drawer-paper-header-text--height;
+	@include box-sizing();
+}
+
+.drawer-paper-header-content{
+	padding-top: $drawer-paper-header-content--paddingTop;
+  padding-bottom: $drawer-paper-header-content--paddingTop / 3;
+	@include box-sizing();
+}
+
+.drawer-paper-body{
+	padding-top: $drawer-paper--padding;
+}
+

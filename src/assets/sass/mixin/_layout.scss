@@ -1,0 +1,63 @@
+/// Add coulmns to row, these columns are designed according to device type.
+/// Each device has column limit and mixin will produce columns width and margin according device type.
+/// @type mixin
+//
+/// @param $from {Int} - Resolution start point
+/// @param $until {Int} - Resolution end point
+/// @param $columns {Int} - Number of column per row
+/// @param $gutter {Pixel} - Space between columns
+/// @param $prefix {String} - Prefix of column style ('col' is used by defualt)
+/// @param $suffix {String} - Device type suffix
+/// @param $type {String} - Media query type (all | screen)
+///
+@mixin media-columns(
+		$from:0 , 
+		$until : $mobile--breakpoint,
+		$columns : $mobile--columns, 
+		$gutter : $mobile--gutter,  
+		$prefix: $Layout--columns--prefix, 
+		$suffix : $mobile--columns--suffix ,
+		$type: all
+		) {
+	@include media-query($from, $until, $type){
+		@for $i from 1 through $columns {
+			.#{$prefix}__#{$suffix}--#{$i} {
+				width: #{(($i / $columns) * 100)+ "%" };
+				//@include flex-value(0 0 #{(($i / $columns) * 100)+ "%" });
+				@include box-sizing();
+
+			}
+		}
+		
+		.row{
+			@include display(flex);
+			@include flex-wrap();
+			@include flex-direction(row);
+			@include box-sizing();
+			overflow: hidden;
+			width: 100%;
+		}
+
+		.column{
+			@include display(flex);
+			@include flex-wrap();
+			@include flex-direction(row);
+			align-items: flex-start;
+		}
+
+		
+		
+		.gutter__#{$prefix}--#{$suffix}{
+			padding-right: $gutter;
+			@include box-sizing();
+			@for $i from 1 through $columns {
+				.#{$prefix}__#{$suffix}--#{$i} {
+					padding-left: $gutter;
+				}
+			}
+		}
+		
+	}
+}
+
+

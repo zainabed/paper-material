@@ -1,0 +1,3 @@
+@function element-offset($container-height, $child-height){
+	@return ($container-height - $child-height) / 2;
+}

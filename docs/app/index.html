@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Material Design</title>
+    <base href="/">
+    <!-- inject:css -->
+    <!-- endinject -->
+  </head>
+
+  <body ng-app="z-material" class="light-them">
+
+    <div class="row" ui-view="header">
+    </div>
+    <div class="row">
+      <div class="column__xdt--3 column__dt--2" ui-view="side-nav"></div>
+      <div class="column__xdt--9 column__dt--10" >
+        <div class="row gutter__column--xdt gutter__column--dt" >
+          <div class="column__xdt--12 column__dt--12" ui-view="content"></div>
+        </div>
+      </div>
+    </div>
+    <!-- inject:js -->
+    <!-- endinject -->
+
+  </body>
+
+</html>

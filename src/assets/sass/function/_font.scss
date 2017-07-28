@@ -1,0 +1,22 @@
+@function get-font-height($name){
+	$font : map-get($font-list, $name);
+
+	@if $font == null {
+		@return 0;
+	}
+
+	$height : map-get($font, 'height');
+
+	@if $height == null {
+
+		@return map-get($font, 'size');
+	}
+
+	@return $height;
+}
+
+
+
+@function get-font-name($name){
+	@return font-#{$name};
+}

@@ -1,0 +1,111 @@
+//
+// Button container
+//
+.button-paper{
+	height: $button-paper--height;
+	margin-top: $button-paper--margin;
+	margin-right: $button-paper--margin;
+	margin-bottom: $button-paper--margin;
+	margin-left: 0;
+	padding: $button-paper--padding;
+	min-width: $button-paper--min-width;
+	border: 0;
+	cursor: pointer;
+	position: relative;
+	line-height: $button-paper--lineHeight;
+	text-align: center;
+	@include palletBackground('white');
+	@include display(inline-block);
+	
+	@extend .font-button;
+	
+	&:last-of-type{
+		margin-right: $button-paper--margin;
+	}
+
+	@include box-sizing();
+}
+
+//
+// Make appearance of button flat as given in spec.
+//
+.button-paper-flat{
+	background: transparent;
+}
+
+//
+// Add elevation to button and make it raise.
+//
+.button-paper-raised{
+	@include box-shadow(0, 1px, 3px, #777);
+	border-radius:2px;
+	padding: $button-paper--padding ($button-paper--padding*2);
+	@include background-hover($color--light);
+	&:hover{
+		@include box-shadow(0, 3px, 3px, darken($button-paper-raised--shadowcolor,10%));
+	}
+}
+
+//
+// Fab button.
+//
+.button-paper-fab{
+	border-radius: 50%;
+	min-width: $button-paper-fab--radius;
+	min-height: $button-paper-fab--radius;
+	padding:0;
+	@include box-shadow(0, 1px, 3px, #777);
+
+	&:hover{
+		@include box-shadow(0, 3px, 3px, darken($button-paper-raised--shadowcolor,10%));
+	}
+}
+
+
+//
+// Reduced FAB button.
+//
+.button-paper-fab--small{
+	min-width: $icon-dimension+px;
+	min-height: $icon-dimension+px;
+	padding: 0;
+}
+
+
+//
+// Enlarge FAB button.
+//
+.button-paper-fab--large{
+	min-width: $button-paper-fab--radius;
+	min-height: $button-paper-fab--radius;
+	padding: ($button-paper--padding/2) 0;
+}
+
+//
+// FAB button content holder.
+//
+.button-paper-fab-content{
+	width: $button-paper-content--fab--width;
+}
+
+
+//
+// Disabled button style.
+//
+.button-paper--disabled{
+	color: darken($color--light, 26%);
+	background: darken($color--light, 12%);
+	cursor: not-allowed;
+	
+	&:hover{
+		background: darken($color--light, 12%);
+	}
+}
+
+//
+// Button content holder.
+//
+.button-paper-content{
+	width: 100%;
+	margin-top: $button-paperSheet--topMargin;
+}

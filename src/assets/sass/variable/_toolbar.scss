@@ -1,0 +1,17 @@
+
+$toolbar-mobile--height : 56px;
+$toolbar-large-device--height: 64px;
+$toolbar-mobile--padding: 16px;
+$toolbar-large-device--padding:24px;
+$toolbar-icon--padding: 16px 12px;
+$toolbar-icon--margin: 12px;
+$toolbar-icon-last--width: 16px;
+$toolbar-mobile-title--paddingLeft: 72px;
+$toolbar-large-device-title--paddingLeft: 80px;
+
+$toolbar-mobile-contrainer--padding: element-offset($toolbar-mobile--height, $icon-dimension);
+$toolbar-large-device-contrainer--padding: element-offset($toolbar-large-device--height, $icon-dimension);
+
+$toolbar-extended--height: 128px;
+$toolbar-extended-title-contrainer--paddingTop: 80px;
+$toolbar-title--fontSize: 18px;

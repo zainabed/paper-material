@@ -1,0 +1,40 @@
+//
+// Chips paper style.
+//
+.chip-paper{
+	@include display();
+	height: $chip-height;
+	@include palletBackground("light-grey");
+	@include border-radius(16px);
+
+	.icon-small{
+		margin: $chip-icon-margin;
+		color: getColorByName('grey');
+	}
+
+	.icon-avatar{
+		margin: 0;
+	}
+
+	& *:last-child:not(.icon-small){
+		padding-right:$chip-lable-padding--side;
+	}
+	
+}
+
+
+//
+// Label for Chips.
+//
+.chip-paper-lable{
+	@include display();
+	padding: $chip-lable-padding 0 $chip-lable-padding $chip-lable-padding--side;
+	@include font-by-name('body1');
+}
+
+//
+// If avatar comes before Chips lable then add left side padding to label.
+//
+.icon-avatar + .chip-paper-lable{
+	padding-left: $chip-lable-padding;
+}

@@ -1,0 +1,33 @@
+{% extends "base.template.html" %}
+
+{% block content %}
+<div class="paper-chapter">
+{% block header %}
+<header class="api-profile-header">
+  <h1 class="paper-chapter__title">{$ doc.name $}</h1>
+</header>
+{% endblock %}
+
+{% block description %}
+<div class="api-profile-description">
+  {$ doc.description | marked $}
+</div>
+{% endblock %}
+
+
+<div>
+
+  {% block additional %}
+  {% endblock %}
+
+  {% block examples %}
+  {%- if doc.examples %}
+  <h2 id="example">Example</h2>
+  {%- for example in doc.examples -%}
+    {$ example | marked $}
+  {%- endfor -%}
+  {% endif -%}
+  {% endblock %}
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,76 @@
+
+$color-orange: #ff9800;
+.orange{
+	color: $color-orange;
+}
+.gray{
+	color: #757575;
+}
+
+// Color pallate
+$colors: (
+"red": #FFEBEE,
+"pink": #E91E63,
+"purple": #9C27B0,
+"deep-purple": #673AB7,
+"indigo": #3F51B5,
+"blue": #2196F3,
+"light-blue": #03A9F4,
+"cyan": #00BCD4,
+"teal": #009688,
+"green": #4CAF50,
+"light-green": #8BC34A,
+"lime": #CDDC39,
+"yellow": #FFEB3B,
+"ambe": #FFC107,
+"orange": #FF9800,
+"deep-orange": #FF5722,
+"brown": #795548,
+"grey": #9E9E9E,
+"light-grey": #EEE,
+"blue-grey": #607D8B,
+"black" : #000,
+"white" : #fff
+);
+
+$color-pallete: 50, 100,200,300,400,500,600,700,800,900;
+
+
+@function colorForBackground($color){
+	
+	@if( lightness($color) > 60 ){
+		@return $color--dark;
+	}
+	@else{
+		@return $color--light;
+	}
+}
+
+@function getColorByName($color){
+	@return map-get($colors, $color);
+}
+
+@mixin pallet($background, $color: #FFF){
+	color: $color;
+	background: $background;
+}
+
+@mixin background($color){
+	background: $color;
+	color: colorForBackground($color);
+}
+
+@mixin palletBackground($value : null){
+	$background : map-get($colors, $value);
+	@if $background == null {
+		$background : white;
+	}
+
+	@include background($background);
+}
+
+// Define color variables
+$color-error: getColorByName('red');
+
+
+

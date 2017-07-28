@@ -1,0 +1,9 @@
+$dialog-elevation: 24  !default;
+$dialog--padding: 24px  !default;
+$dialog-column: 56px  !default;
+$dialog--min-width : $dialog-column * 5  !default;
+$dialog-mobile--max-width: $dialog-column * 5  !default;
+$dialog-tablet--max-width: $dialog-column * 8  !default;
+$dialog-desktop--max-width: $dialog-column * 11  !default;
+
+$dialog--background: #fff !default;

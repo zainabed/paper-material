@@ -1,0 +1,33 @@
+/// Layout breakpoints
+$mobile--breakpoint: 480px;
+$tablet--breakpoint: 840px;
+$desktop--breakpoint: 1024px;
+$desktop--large--breakpoint: 1920px;
+
+/// Layout gutter space
+$mobile--gutter: 16px;
+$tablet--gutter: 16px;
+$desktop--gutter: 24px;
+$desktop--large--gutter: 24px;
+
+$gridlist-tiles--gutter: 4px;
+
+/// Layout columns
+$mobile--columns: 4;
+$tablet--columns: 8;
+$desktop--columns: 12;
+$desktop--large--columns: 12;
+
+/// Layout column name suffix
+$mobile--columns--suffix: 'mb';
+$tablet--columns--suffix: 'tb';
+$desktop--columns--suffix: 'dt';
+$desktop--large--columns--suffix: 'xdt';
+
+/// Layout columns prefix
+$Layout--columns--prefix: 'column';
+$gridlist--columns--prefix: 'grid';
+
+// Keyline
+$keyline-large-device: 24px;
+$keyline-medium-device: 16px;

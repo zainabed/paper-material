@@ -1,0 +1,102 @@
+
+.text-paper{
+	//height: $text-paper--height - $text-paper--margin;
+	width:100%;
+	//border-bottom: 0px $text-paper--borderStyle $text-paper--borderColor;
+	
+	@include display(flex);
+	@include flex-wrap();
+	//transition: border ease 0.2s;
+	//color: getColorByName('blue');
+
+	.icon-small{
+		padding-right: $text-paper-icon--topPadding;
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
+.text-paper-content{
+	@include display(flex);
+	@include flex-value(1);
+	@include flex-wrap();
+	padding-top: $text-paper--padding;
+	padding-bottom:	$text-paper--bottomPadding;
+}
+
+.text-paper-label{
+	@include font-by-name('caption');
+	@include display();
+	color: getColorByName('grey');
+	width: 100%;
+	margin-bottom: $text-paper--margin;
+	transition: all ease 0.2s;
+}
+
+.text-paper-label-float{
+	@include font-by-name('caption');
+	padding-top: $text-paper--padding;
+	color: inherit;
+}
+
+.text-paper-label-static{
+	@include font-by-name('subheading');
+	padding-top: $text-paper--height - ($text-paper--margin * 2) - get-font-height('subheading');;
+	cursor: inherit;
+}
+
+@mixin placeholderColor($color){
+	
+}
+.text-paper-input{
+	@include font-by-name('subheading');
+	color: getColorByName('black');
+	border-width: 0px;
+	border-style: solid;
+	text-transform: capitalize;
+	outline:none;
+	padding: 0;
+	width: 100%;
+	border-bottom-width: 1px;
+	border-bottom-color: getColorByName('light-grey');
+
+	&:focus{
+		border-bottom-width: 2px;
+	}
+
+	&::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+	    color:    getColorByName('grey');
+	}
+	&:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	   color:    getColorByName('grey');
+	   opacity:  1;
+	}
+	&::-moz-placeholder { /* Mozilla Firefox 19+ */
+	   color:    getColorByName('grey');
+	   opacity:  1;
+	}
+	&:-ms-input-placeholder { /* Internet Explorer 10-11 */
+	   color:    getColorByName('grey');
+	}
+	 /*&:placeholder-shown { Standard (https://drafts.csswg.org/selectors-4/#placeholder) 
+	  color:    getColorByName('grey');
+	}*/
+}
+
+.text-paper-border{
+	transition: border-color .5s ease-in-out;
+	border-bottom-width: 2px;
+	border-bottom-style: $text-paper--borderStyle;
+	border-bottom-color: inherit;
+}
+
+.text-paper-error{
+	@include display();
+	padding: $text-paper--margin 0 0;
+	margin: 0;
+	list-style-type: none;
+	@include font-by-name('caption');
+	width: 100%;	
+	color: $color-error;
+
+}

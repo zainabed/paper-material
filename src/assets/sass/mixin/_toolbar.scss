@@ -1,0 +1,17 @@
+@mixin toolbar-display($height, $padding){
+	height: $height;
+	padding-left: $padding;
+	padding-right: $padding;
+}
+
+@mixin toolbar-contrainer-padding($mobile-padding, $large-device-padding, $direction: top){
+	
+	@include media-query($until: $mobile--breakpoint){
+		padding: if($direction ==  top ,$mobile-padding 0 , 0 $mobile-padding) ;	
+	}
+	
+	@include media-query($from: $mobile--breakpoint){
+		padding:  if($direction == top, $large-device-padding 0 , 0 $large-device-padding)
+	}
+
+}

@@ -1,0 +1,20 @@
+
+.paper-divider{
+	@include border-style('bottom', $divider--borderWidth, $divider--color);
+ }
+
+.paper-divider-inset{
+	@include border-style('bottom', $divider--borderWidth, $divider--color);
+ 	
+}
+
+.subheader.paper-divider{
+	@include border-style('top', $divider--borderWidth, $divider--color);
+	@include border-style('bottom', 0, #fff);
+ }
+
+.subheader.paper-divider-inset{
+	@include border-style('top', $divider--borderWidth, $divider--color);
+	@include border-style('bottom', 0, #fff);
+ 	
+}

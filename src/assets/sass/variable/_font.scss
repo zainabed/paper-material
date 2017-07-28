@@ -1,0 +1,84 @@
+/// Typography 
+$font-display4--size: 112px !default;
+$font-display3--size: 56px !default;
+$font-display2--size: 45px !default;
+$font-display1--size: 34px !default;
+$font-headline--size: 24px !default;
+$font-title--size: 20px !default;
+$font-subheading--size:16px !default;
+$font-body2--size: 14px !default;
+$font-body1--size: 14px !default;
+$font-body1-desktiop--size: 13px !default;
+$font-caption--size: 12px !default;
+$font-button--size: 14px !default;
+$font-chapter-intro--size: 20px !default;
+$font-small-headling--size: 20px !default;
+
+
+$font-display2--height: 48px !default;
+$font-display1--height: 40px !default;
+$font-headline--height: 32px !default;
+$font-subheading2--height: 28px !default;
+$font-subheading--height: 24px !default;
+
+$font-body2--height: 24px !default;
+$font-body1--height: 20px !default;
+$font-caption--height: 16px !default;
+
+
+
+$font-thin: 100 !default;
+$font-light: 300 !default;
+$font-regular: 400 !default;
+$font-medium: 500 !default;
+$font-bold: 700 !default;
+
+$content--padding: 20px;
+$chapter--padding: 80px;
+$chapter-title--padding: 30px;
+$chapter-intro--paddingBottom: 32px;
+
+$font-list: (
+	'display4' : ('size' : $font-display4--size, 'weight' : $font-light),
+	'display3' : ('size' : $font-display3--size, 'weight' : $font-regular ),
+	'display2' : ('size' : $font-display2--size, 'weight' : $font-regular, 'height' : $font-display2--height),
+	'display1' : ('size' : $font-display1--size, 'weight' : $font-regular, 'height' : $font-display1--height),
+	'headline' : ('size' : $font-headline--size, 'weight' : $font-regular, 'height' : $font-headline--height),
+	'title' : ('size' : $font-title--size, 'weight' : $font-medium),
+	'subheading' : ('size' : $font-subheading--size, 'weight' : $font-regular, 'height' : $font-subheading--height),
+	'body2' : ('size' : $font-body2--size, 'weight' : $font-bold, 'height' : $font-body2--height),
+	'body1' : ('size' : $font-body1--size, 'desktop-size' : $font-body1-desktiop--size ,'weight' : $font-regular, 'height' : $font-body1--height),
+	'caption' : ('size' : $font-caption--size, 'weight' : $font-regular, 'height' : $font-caption--height),
+	'button': ('size' : $font-button--size, 'weight' : $font-medium, 'transform': uppercase)
+);
+
+$font-opacity-map: (
+	'light' : (
+		'display4' : 54,
+		'display3': 54,
+		'display2' : 54,
+		'display1' : 54,
+		'title' : 87,
+		'headline': 87,
+		'subheading': 87,
+		'body2': 87,
+		'body1': 87,
+		'caption': 54,
+		'menu': 87,
+		'button': 87
+	),
+	'dark' : (
+		'display4' : 70,
+		'display3': 70,
+		'display2' : 70,
+		'display1' : 70,
+		'title' : 100,
+		'headline': 100,
+		'subheading': 100,
+		'body2': 100,
+		'body1': 100,
+		'caption': 70,
+		'menu': 100,
+		'button': 100
+	)
+);

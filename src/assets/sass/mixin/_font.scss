@@ -1,0 +1,99 @@
+@mixin margin-bottom($margin){
+	margin: 0 0 $margin;
+}
+
+@mixin font-by-name($name){
+	$font : get-font-name($name);
+	@extend .#{$font};
+}
+
+
+@mixin artile-content-space($padding){
+	
+	h3, h2, h1, p, ul{
+		@include margin-bottom($padding)
+	}
+
+	p:last-child{
+		margin-bottom: 0 ;
+	}
+
+	ul{
+		padding-left: $padding; 
+	}
+}
+
+
+
+
+@mixin font($name, 
+	$size, 
+	$weight, 
+	$style: normal, 
+	$transform : none, 
+	$height: null){
+	
+	.font-#{$name}{
+		//@debug 'height = ' + #{$height};
+		font-size: $size;
+		font-style: $style;
+		font-weight: $weight;
+		font-family: $font--baseFamily;
+		position: relative;
+
+		@if $transform != none{
+			text-transform: $transform;
+		}
+
+		@if $height != null{
+			line-height: $height;
+			//top: -(($height - $size) / 2);
+		}
+
+		
+	}
+}
+
+
+@mixin build-font-opacity($font-opacity-map, $theme: 'light'){
+	$font-opacity-list : map-get($font-opacity-map, $theme);
+	@each $name, $value in $font-opacity-list {
+		.font-#{$name} {
+			@include get-opacity($value);
+		}
+	}
+}
+
+@mixin build-app-font-opacity($theme) {
+  @include build-font-opacity($font-opacity-map, $theme);
+
+  .light-theme {
+	@include build-font-opacity($font-opacity-map, 'light');
+  }
+
+  .dark-theme {
+	@include build-font-opacity($font-opacity-map, 'dark');
+  }
+}
+
+@each $name, $attrib in $font-list{
+	@include font( 	
+					$name,
+					$size: map-get($attrib, 'size'),
+					$weight: map-get($attrib, 'weight'),
+					$transform : map-get($attrib, 'transform'), 
+					$height : map-get($attrib, 'height')
+				);
+
+	
+}
+
+@mixin buid-font-face(){
+	@font-face {
+		font-family: 'Roboto';
+	    font-style: normal;
+	    font-weight: 400;
+	    src: url(font/Roboto-Regular.ttf);
+	}
+}
+

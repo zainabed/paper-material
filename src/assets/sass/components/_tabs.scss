@@ -1,0 +1,117 @@
+
+
+.tabs-paper{
+	width: 100%;
+	position: relative;
+	@include palletBackground('cyan'); 
+}
+
+.tabs-paper-container{
+	min-height: $tabs-paper--minHeight;
+	padding: 0;
+	@include display(flex);
+	@include flex-wrap();
+	overflow: hidden;
+	width: 100%;
+	margin:0;
+	@include media-query($from: $tablet--breakpoint, $until: $desktop--breakpoint){
+		padding-left: $tabs-paper--paddingLeft--tablet - $tab--paddingLeftRight--tablet;
+	}
+
+	@include media-query($from: $desktop--breakpoint){
+		padding-left: $tabs-paper--paddingLeft--desktop - $tab--paddingLeftRight--desktop;
+	}
+}
+
+.tabs-paper--center{
+	text-align: center;
+}
+
+.tab-item{
+	display: inline-block;
+	position: relative;
+	max-width: $tab--maxWidth;
+	min-width: $tab--minWidth--largeScree;
+	
+	@include media-query($until: $mobile--breakpoint){
+		min-width : $tab--minWidth--smallScree;
+	}
+
+	@include media-query( $until: $desktop--breakpoint){
+		padding-left: $tab--paddingLeftRight--tablet;
+		padding-right: $tab--paddingLeftRight--tablet;
+	}
+
+	@include media-query($from: $desktop--breakpoint){
+		padding-left: $tab--paddingLeftRight--desktop;
+		padding-right: $tab--paddingLeftRight--desktop;
+	}
+	
+	
+	cursor: pointer;
+	text-align: center;
+	
+	color: darken($color--light,10);
+	@include display();
+
+	@include media-query($until: $mobile--breakpoint){
+		@include flex-value(1);	
+	}
+	
+}
+
+.tab-item-label{
+	@include display();
+	@include font-by-name('body1');
+	text-transform: uppercase;
+}
+
+.tab-item-icon{
+	width: 100%;
+	@include display();
+}
+
+.tabs-paper-label{
+	height: $tabs-paper-label--height;
+
+	.tab-item {
+		height: $tabs-paper-label--height;
+		padding-bottom: $tab-label--paddingBottom;
+	}
+
+	.tab-item-label{
+		
+		line-height: $tabs-paper-label--height;
+	}
+}
+
+.tabs-paper-label-icon{
+	
+	.tab-item-label{
+		padding-top: $tab-label-icon--item-label--paddingTop;
+		padding-bottom: $tab-label-icon--item-icon--paddingBottom;
+		line-height: $tab-label-icon--item-label--lineHeight;
+	}
+
+	.icon-small{
+		margin-bottom: 0;
+	}
+}
+
+.tabs-paper-icon{
+	height: $tabs-paper-label--height;
+
+	.tab-item {
+		height: $tabs-paper-label--height;
+	}
+
+	.tab-item-icon{
+		padding-bottom: $tabs-paper-label--height / 4;
+	}
+}
+
+
+.tab-item--selected{
+	border-bottom: 2px solid #FFEB3B;
+	color: $color--light;
+}

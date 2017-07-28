@@ -1,0 +1,19 @@
+@mixin card-title($font--size, $margin, $font--weight){
+	font-size: $font--size;
+	margin-top: $margin;
+	font-weight: $font--weight;
+	width:100%;
+	margin-bottom:12px;
+}
+
+@mixin card-margin() {
+	@include media-query(0, $tablet--breakpoint, all){
+		$margin : get-card-margin($card-paper--margin, 'small');
+		margin: $margin 0;
+	}
+
+	@include media-query($tablet--breakpoint, 0, all){
+		$margin : get-card-margin($card-paper--margin, 'large');
+		margin: $margin 0;
+	}
+}

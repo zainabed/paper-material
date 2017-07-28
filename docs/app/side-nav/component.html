@@ -1,0 +1,10 @@
+<div class="paper-list row">
+	<p class="subheader-paper">Component</p>
+	<div class="paper-list__item paper-list__item--oneline"
+	data-ng-repeat="materialRoute in $ctrl.materialRoutes" >
+		<div class="paper-list__item__content"
+		ui-sref="{{materialRoute.stateName}}">
+			<p class="paper-list__item__title">{{materialRoute.name}}</p>
+		</div>
+	</div>
+</div>

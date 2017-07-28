@@ -1,0 +1,54 @@
+
+/**
+ * @ngdoc directive
+ * @module component
+ * @name action
+ * @description
+ * This file reader will pull the contents from a text file (by default .ngdoc)
+ *
+ */
+
+
+.action-paper{
+	@include display(flex);
+	@include media-query($until: $mobile--breakpoint){
+		padding: ($action-paper--padding - 2) $action-paper--padding;
+	}
+
+	@include media-query($from: $mobile--breakpoint){
+		padding: $action-paper--padding;
+	}
+	width: 100%;
+}
+
+//
+// Action paper left aligned content.
+//
+
+.action-paper-left{
+	@include display(flex);
+	@include flex-value(1);
+	order: -1;
+	justify-content : flex-start;
+}
+
+//
+// Action paper right aligned content.
+//
+
+.action-paper-right{
+	@include display(flex);
+	@include flex-value(1);
+	justify-content : flex-end;
+}
+
+//
+// Action paper center aligned content.
+//
+
+.action-paper-center{
+	@include display(flex);
+	@include flex-value(1);
+	order: 2;
+	justify-content : center;
+}

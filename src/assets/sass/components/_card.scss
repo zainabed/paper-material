@@ -1,0 +1,111 @@
+/**
+ * @ngdoc directive
+ * @module component
+ * @name cards
+ * @description
+ * A card is a sheet of material that serves as an entry point to more detailed information.
+ *
+ * Cards may contain a photo, text, and a link about a single subject. They may display content containing elements of varying size, 
+ * such as photos with captions of variable length.
+ *
+ * A card collection is a layout of cards on the same plane.
+ * @usage
+ * Cards are a convenient means of displaying content composed of different elements. They’re also well-suited for showcasing 
+ * elements whose size or supported actions vary, like photos with captions of variable length.
+ *
+ * @example
+ * <example name="card">
+ * <file name="index.html">
+ * <div class="card-paper">
+ *     <div class="title-paper title-paper-twoline">
+ *        <div class="title-paper-content">
+ *          <span class="title-paper-title">Title goes here</span>
+ *          <span class="title-paper-subtitle">Subtitle here</span>
+ *        </div>
+ *      </div>
+ *     <div class="media-paper media-paper--16-9 bg-cyan">
+ *        <div class="media-paper-content" ></div>
+ *      </div>
+ *      <div class="card-paper__content">
+ *        Again, the flex-start, flex-end, and center values are straightforward.
+ *      </div>
+ *     <div class="action-paper">
+ *        <div class="action-paper-left">
+ *          <span class="button-paper button-paper-flat ">Action</span>
+ *          <span class="button-paper button-paper-flat ">Action</span>
+ *        </div>
+ *      </div>
+ *    </div>
+ * </file>
+ * </example>
+ */
+.card-paper{
+	@include elevation($card--elevation);
+	@include border-radius($card-border-radius);
+	@include card-margin();
+	@include display(flex);
+	@include flex-value(0 0 100%);
+	@include flex-wrap();
+	@include box-sizing();
+	
+	position: relative;
+	background: $component-color;
+	
+	&:hover{
+		@include elevation($card--elevation + 2);
+	}
+	
+	.title-paper{
+		padding: 0 $card-paper-text--padding;
+	}
+
+}
+
+//
+// Card content apearance. (mostly it contains text value).
+//
+.card-paper__content{
+	width: 100%;
+	@include font-by-name('body1');
+	@include display(flex);
+	padding-top: $card-paper-text--padding;
+	padding-left: $card-paper-text--padding;
+	padding-right: $card-paper-text--padding;
+
+	//@todo defualt padding bottom, should be 24 , if it is not last elment then it should be 16.
+	padding-bottom: $card-paper-text--padding;
+}
+
+//
+// Card text comes after title then top padding must be 0.
+//
+.title-paper + .card-paper__content{
+	padding-top: 0;
+}
+
+
+//
+// Card footer holder.
+//
+.card-paper__footer{
+	
+	bottom:0;
+	left:0;
+	width:100%;
+	@include display(flex);
+	position: absolute;
+	@include flex-wrap();
+	color: map-get($colors, 'white');
+}
+
+//
+// Overlay for Card footer.
+//
+.card-paper__footer--overlay{
+	width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    opacity: 0.5;
+	@include palletBackground('black');
+}

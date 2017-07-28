@@ -1,0 +1,20 @@
+$text-color-opacity: ("light": ("primary": 87, "secondary": 54, "disabled": 38, "divider": 12, "icon" : 54), "dark": ("primary": 100, "secondary": 70, "disabled": 50, "divider": 12, "icon" : 100));
+
+@mixin get-paper-opacity($text-type, $theme: light) {
+    $theme-opacity: map-get($text-color-opacity, $theme);
+    $opacity: map-get($theme-opacity, $text-type);
+
+    @include get-opacity($opacity);
+}
+
+@mixin get-paper-color($text-type, $theme: 'light') {
+    @include get-paper-opacity($text-type, $theme);
+
+    @if $theme == 'light' {
+        color: #000;
+    }
+
+    @else {
+        color: #fff;
+    }
+}

@@ -1,0 +1,80 @@
+
+.paper-list{
+	position: relative;
+	list-style-type: none;
+	padding: 8px 0;
+	margin: 0;
+	background: $component-color;
+}
+
+.paper-list__item{
+	@include key-line-padding();
+	@include display(flex);
+	width: 100%;
+}
+
+.paper-list__icon{
+	margin-right: 0 !important;
+	@include key-line-margin();
+	@include box-sizing();
+}
+
+.paper-list__item--oneline{
+	min-height: 48px;
+}
+
+.paper-list__item--oneline-avatar{
+	min-height: 56px;
+}
+
+ .paper-list__item--oneline-big{
+
+	 .paper-list__item__title{
+		@include font-by-name(title-text('bigtitle'));
+		width: 100%;
+	}
+
+	
+}
+
+.paper-list__item--twoline{
+  min-height: 72px
+}
+
+.paper-list__item--twoline-big{
+
+
+	 .paper-list__item__title{
+		@include font-by-name(title-text('bigtitle'));
+		width: 100%;
+	}
+
+}
+
+.paper-list__item--threeline{
+	
+  min-height: 88px;
+}
+
+.paper-list__item__title{
+	@include font-by-name(title-text('title'));
+	width: 100%;
+}
+
+.paper-list__item__subtitle{
+	@include font-by-name(title-text('subtitle'));
+	width: 100%;
+}
+
+.paper-list__item__content{
+	@include display(flex);
+	@include flex-wrap();
+	@include flex-direction(column);
+	@include flex-value(1);
+	justify-content: center;
+}
+
+.paper-list__item__icon, .paper-list__item__avatar{
+	width: $prime-content--width - $title-paper--padding;
+	align-self: center;
+}

@@ -1,0 +1,23 @@
+@mixin title-paper-default(){
+	width: 100%;
+	@include display(flex);
+	@include flex-wrap();
+}
+
+
+/**
+ * @name contentPadding
+ * @param $container-height Contrainer height within which text are defined.
+ * @param $font-map List of font's name, value keypair. 
+ *
+ */
+@mixin content-padding($container-height, $font-map, $font-names ) {
+	$height : 0;
+	@each $font-name in $font-names{
+		$height : $height + get-font-height(map-get($font-map, $font-name));
+	}
+
+	$padding : element-offset($container-height, $height);
+	padding-top : $padding;
+	padding-bottom : $padding;
+}

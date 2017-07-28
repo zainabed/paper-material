@@ -1,0 +1,40 @@
+
+.icon{
+	   cursor: pointer;
+      //@extend .font-icon;
+      @include get-paper-color('icon', $theme);
+     .light-theme {
+      @include get-paper-color('icon', 'light');
+     }
+
+     .dark-theme {
+      @include get-paper-color('icon', 'dark');
+     }
+}
+
+.icon--small{
+   width: $icon--sizeSmall;
+   height: $icon--sizeSmall;
+   @include icon-margin($icon-dimension, $icon--sizeSmall);
+
+}
+
+.icon__avatar{
+   width: $icon-avatar--size;
+   height: $icon-avatar--size;
+   background : #009688;
+   @include icon-margin($icon-dimension, $icon-avatar--size);
+   @include display();
+   border-radius: 50%;
+}
+
+.icon__avatar--small{
+   width: $icon-avatar-small--size;
+   height: $icon-avatar-small--size;
+}
+
+.icon--large{
+   width: $icon--sizeLarge;
+   height: $icon--sizeLarge;
+   @include icon-margin($icon-dimension, $icon--sizeLarge);
+}

@@ -1,0 +1,10 @@
+$text-paper--height: 72px;
+$text-paper--margin: 8px;
+$text-paper--padding: 16px;
+$text-paper--bottomPadding: 8px;
+$text-paper-label--bottomPadding: 8px;
+$text-paper--topPadding: get-font-height('caption') + $text-paper--padding + $text-paper-label--bottomPadding;
+$text-paper--borderStyle: solid;
+$text-paper--borderColor: getColorByName('blue');
+$text-paper-icon--width: 72px;
+$text-paper-icon--topPadding: 24px;

@@ -1,0 +1,61 @@
+.paper-toolbar {
+  width: 100%;
+  background: $primary-color;
+  @include get-paper-color("primary", get-color-theme($primary-color));
+  @include toolbar-contrainer-padding($toolbar-mobile--padding, $toolbar-large-device--padding, side);
+  @include display(flex);
+  @include media-query($until: $mobile--breakpoint) {
+    height: $toolbar-mobile--height;
+  }
+  @include media-query($from: $mobile--breakpoint) {
+    height: $toolbar-large-device--height;
+  }
+  
+  .icon {
+    @include get-paper-color("icon", get-color-theme($primary-color));
+  }
+}
+
+.paper-toolbar--extended {
+  height: $toolbar-extended--height;
+}
+
+.paper-toolbar__left {
+  @include flex-value(0 0 auto);
+  @include flex-order(1);
+  
+  .icon--small:first-child {
+    margin-left: 0;
+  }
+  
+  .action-paper {
+    padding-left: 0;
+  }
+}
+
+.paper-toolbar__right {
+  @include flex-value(0 0 auto  );
+  @include flex-order(3);
+  
+  .icon--small:last-child {
+    margin-right: 0;
+  }
+  
+  .action-paper {
+    padding-right: 0;
+  }
+}
+
+.paper-toolbar__center {
+  @include flex-value(2);
+  @include flex-order(2);
+  @include toolbar-contrainer-padding($toolbar-mobile-contrainer--padding, $toolbar-large-device-contrainer--padding, top);
+  align-self: center;
+}
+
+.paper-toolbar__title{
+  @extend .font-title;
+}
+.paper-toolbar__title--extended {
+  padding-top: $toolbar-extended-title-contrainer--paddingTop;
+}

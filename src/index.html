@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Material Design</title>
+    <!-- inject:css -->
+    <!-- endinject -->
+  </head>
+
+  <body ng-app="aaDemo" class="light-them">
+
+    <div class="row" ui-view="header">
+    </div>
+    <div class="row">
+      <div class="column__xdt--3 column__dt--2" ui-view="side-nav"></div>
+      <div class="column__xdt--9 column__dt--10" ui-view="content"></div>
+    </div>
+    <!-- inject:js -->
+    <!-- endinject -->
+    <script>
+      window.onload = function() {
+        hljs.initHighlightingOnLoad();
+        var aCodes = document.getElementsByTagName('pre');
+        for (var i = 0; i < aCodes.length; i++) {
+          hljs.highlightBlock(aCodes[i]);
+        }
+      };
+    </script>
+  </body>
+
+</html>

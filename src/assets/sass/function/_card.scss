@@ -1,0 +1,6 @@
+/// Get card top and bottom margin.
+/// Margin value differe according device resolution.
+/// @param {String} $device - Device dimension type.
+@function get-card-margin($card-margin, $device: 'small') {
+	@return map-get($card-margin, $device);
+}

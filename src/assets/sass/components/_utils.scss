@@ -1,0 +1,26 @@
+@for $i from 1 through 10{
+	$width: $i*10;
+	.u-w#{$width}{
+		width: #{$width + '%'};
+	}
+}
+
+.u-right{
+	text-align: right;
+}
+
+.flex-right{
+	justify-content: flex-end;
+}
+
+.flex-left{
+	justify-content: flex-start;
+}
+
+.u-background-none{
+	background: transparent !important;
+}
+
+.u-hide{
+   display: none;
+}

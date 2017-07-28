@@ -1,0 +1,32 @@
+
+
+.subheader-paper{
+  	width: 100%;
+  	@extend .font-body2;
+  	$padding: element-offset($subheader--height, get-font-height('body2'));
+  	padding-top: $padding;
+  	padding-bottom: $padding;
+  	padding-left : $subheader--padding;
+  	padding-right: $subheader--padding;
+  	@include box-sizing();
+}
+
+.subheader-paper-float{
+	margin-left: $subheader-float--margin;
+	padding-left: 0;
+}
+
+.subheader-paper-fixed{
+  position: fixed;
+  background: #fff;
+  z-index: 2;
+  color: inherit;
+  left: 0;
+  @include media-query($until: $mobile--breakpoint){
+    top: $toolbar-mobile--height;  
+  }
+  
+  @include media-query($from: $mobile--breakpoint){
+    top: $toolbar-large-device--height;
+  }
+}

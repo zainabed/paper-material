@@ -1,0 +1,29 @@
+body,span,h1,h2,h3,h4{
+	margin: 0;
+	padding: 0;
+}
+
+p{
+	@include font-by-name(title-text('subtitle'));
+}
+
+a{
+  text-decoration: none;
+  color: $accent-color;
+}
+
+.page{
+  @include display(flex);
+  @include flex-wrap();
+//  padding: 0;
+  
+}
+
+.page-header{
+  font-weight: 700;
+}
+
+.page-content{
+ 	@include display(flex);
+ 	@include flex-wrap();
+}

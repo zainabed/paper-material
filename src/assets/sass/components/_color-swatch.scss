@@ -1,0 +1,29 @@
+
+//
+// Create colors.
+//
+
+@mixin make-color-swatch($color-name, $color-range, $color-value){
+  .ink-#{$color-name}-#{$color-range} {
+    color : $color-value;
+  } 
+  .bg-#{$color-name}-#{$color-range}{
+    background-color : $color-value;
+  }
+}
+
+
+//
+// Create color swatch.
+//
+
+@mixin color-swatch(){
+  @each $color-name, $color-list in $color-list-map{
+   // @debug($color-name);
+    @each $color-range, $color-value in $color-list{
+      @include make-color-swatch($color-name, $color-range, $color-value);
+    }
+  }
+}
+
+@include color-swatch();

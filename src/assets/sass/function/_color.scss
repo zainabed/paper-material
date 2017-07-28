@@ -1,0 +1,44 @@
+/// Returns RGBA color value from color swatch map list.
+/// @param {String} $name - color map name.
+/// @param {Int} $value - color value.
+/// @return {RGBA} color value if RGBA 
+@function get-color-value($name , $value : '500'){
+	$color-map : map-get($color-list-map, $name);
+	@return map-get($color-map, $value);
+}
+
+@function get-color-theme($color){
+	@if( lightness($color) > 60 ){
+		@return 'light';
+	}
+	@else{
+		@return 'dark';
+	}
+}
+
+@function get-body-backgroud($theme) {
+	@if($theme == 'light') {
+		@return  get-color-value('white', '50');
+	
+	}@else {
+		@return	get-color-value('grey', '800');
+	}
+}
+
+@function get-body-color($theme) {
+	@if($theme == 'light') {
+		@return  get-color-value('black', 'base');
+	
+	}@else {
+		@return	get-color-value('white', 'base');
+	}
+}
+
+@function get-component-color($theme) {
+	@if($theme == 'light') {
+		@return  get-color-value('white', 'base');
+	
+	}@else {
+		@return	get-color-value('grey', '700');
+	}
+}

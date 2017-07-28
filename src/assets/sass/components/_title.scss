@@ -1,0 +1,133 @@
+
+
+
+$title-text: (
+	'title' : 'subheading',
+	'subtitle': 'body1',
+	'text' : 'body1',
+	'bigtitle': 'headline'
+);
+
+
+
+
+.title-paper, .list-item-paper{
+	@include title-paper-default();
+	padding-left: 0;
+	padding-right: 0;
+
+	.icon-small, .icon-avatar{
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
+.title-paper-oneline, .list-item-paper-oneline{
+
+	.title-paper-content, .list-item-paper-content{
+		//@include content-padding($title-oneLine--height, $title-text,  ('title'));
+		padding-top: $title-paper-contentOneLine--paddingTop;
+		padding-bottom: $title-paper-contentOneLine--paddingBottom;
+	}
+
+	.title-paper-icon, .list-item-paper-icon{
+		@include element-padding($title-oneLine--height, $icon-dimension);
+	}
+
+	.title-paper-avatar, .list-item-paper-avatar, .list-item-paper-sub-icon{
+		@include element-padding($title-oneLine-avatar--height, $icon-dimension);
+	}
+
+	.list-item-paper-avatar + .list-item-paper-content{
+		padding-top: $title-paper-contentTwoLine--paddingTop;
+	}
+}
+
+.title-paper-oneline-big, .list-item-paper-oneline-big{
+
+	.title-paper-content, .list-item-paper-content{
+		padding-top: $title-paper-contentLine-big--paddingTop;
+		padding-bottom: $title-paper-contentTwoLine--paddingTop;
+	}
+
+	.title-paper-title, .list-item-paper-title{
+		@include font-by-name(title-text('bigtitle'));
+		width: 100%;
+	}
+
+	.title-paper-avatar, .list-item-paper-avatar, .list-item-paper-sub-icon{
+		@include element-padding($title-oneLine-big--height, $icon-dimension);
+	}
+}
+
+.title-paper-twoline, .list-item-paper-twoline{
+
+	.title-paper-content, .list-item-paper-content{
+		padding-top: $title-paper-contentTwoLine--paddingTop;
+		padding-bottom: $title-paper-contentTwoLine--paddingBottom;
+	}
+
+	/*.title-paper-content, .list-item-paper-content{
+		@include content-padding($title-twoLine--height, $title-text,  ('title', 'subtitle'));
+	}*/
+
+	.title-paper-icon,.title-paper-avatar, .list-item-paper-icon, .list-item-paper-avatar, .list-item-paper-sub-icon{
+		@include element-padding($title-twoLine--height, $icon-dimension);
+	}
+
+}
+
+.title-paper-twoline-big, .list-item-paper-twoline-big{
+
+	.title-paper-content, .list-item-paper-content{
+		padding-top: $title-paper-contentLine-big--paddingTop;
+		padding-bottom: $title-paper-contentOneLine--paddingTop;
+	}
+
+	.title-paper-title, .list-item-paper-title{
+		@include font-by-name(title-text('bigtitle'));
+		width: 100%;
+	}
+
+	.title-paper-avatar, .list-item-paper-avatar, .list-item-paper-sub-icon{
+		@include element-padding($title-twoLine-big--height, $icon-dimension);
+	}
+}
+
+.title-paper-threeline, .list-item-paper-threeline{
+	
+	.title-paper-content, .list-item-paper-content{
+		padding-top: $title-paper-contentTwoLine--paddingTop;
+		padding-bottom: $title-paper-contentTwoLine--paddingBottom;
+	}
+
+	.title-paper-icon,.title-paper-avatar, .list-item-paper-icon, .list-item-paper-avatar, .list-item-paper-sub-icon{
+		@include element-padding($title-threeLine--height, $icon-dimension);
+	}
+
+}
+
+.title-paper-title, .list-item-paper-title{
+	@include font-by-name(title-text('title'));
+	width: 100%;
+}
+
+.title-paper-subtitle, .list-item-paper-subtitle{
+	@include font-by-name(title-text('subtitle'));
+	width: 100%;
+}
+
+.title-paper-content, .list-item-paper-content{
+	@include display(flex);
+	@include flex-wrap();
+	@include flex-direction(column);
+	@include flex-value(1);
+}
+
+.title-paper-icon,.title-paper-avatar, .list-item-paper-icon, .list-item-paper-avatar{
+	width: $prime-content--width - $title-paper--padding;
+}
+
+.title-paper-sub-content, .list-item-paper-sub-content{
+
+}

@@ -1,0 +1,187 @@
+
+
+// primary styles
+
+
+
+// end of primary styles
+
+.table-paper{
+	border-collapse : collapse;
+	border: none;
+	width: 100%;
+	@extend .font--baseFamily;
+	@include display(table);
+}
+
+.table-paper-card{
+	@extend .card-paper;
+	@include display(flex);
+	@include flex-wrap();
+}
+
+.table-paper-card-header{
+	height: $table-paper-card-header--height;
+	width: 100%;
+	padding: 0 ($table-paper-header--right-padding - $action-paper--padding) 0 $table-paper--padding;
+	@include display(flex);
+}
+
+.table-paper-card-header-text{
+	$padding: element-offset($table-paper-card-header--height , get-font-height('title'));
+	padding-top: $padding;
+	padding-bottom:$padding;
+	@include flex-value(1);
+}
+
+.table-paper-card-header-icons{
+	$padding: element-offset($table-paper-card-header--height , $icon-dimension);
+	padding-top: $padding;
+	padding-bottom:$padding;
+}
+
+.table-paper-card-title{
+	font-weight: $font-regular;
+	@extend .font-title;
+}
+
+.table-paper-footer{
+	@include display(flex);
+	width: 100%;
+	height: $table-paper-card-header--height;
+	$padding: element-offset($table-paper-card-header--height, $icon--sizeSmall);
+	padding: 0 ($table-paper-header--right-padding - $action-paper--padding) 0 $table-paper--padding;
+	line-height: $table-paper-card-header--height - ($padding * 2);
+	@include box-sizing();
+	margin: 0;
+	text-align: right;
+	@extend .font-caption;
+
+	
+}
+.table-paper-footer-left{
+	@include display(flex);
+	@include flex-value(1);
+	@include element-padding($table-paper-card-header--height, get-font-height('subheading'));
+
+	.material-icons{
+		margin:0;
+	}
+}
+.table-paper-footer-right{
+	@include display(flex);
+	
+}
+
+.table-paper-footer-label{
+	@include flex-value(1);
+}
+
+.table-paper-footer-pagging{
+	padding: 0 $table-paper-footer-pagging--padding;
+}
+
+.table-paper-footer-count{
+	width: $table-paper-footer-count--width;
+	
+}
+
+.table-paper-icon{
+	&:last-of-type{
+		margin-right: 0;
+	}
+}
+
+.table-paper-row{
+	display: table-row;
+	height: $table-paper-row--height;
+	margin: 8px 0;
+	font-size: $table-paper-cell--fontSize;
+	color: lighten($table-paper--color, 20%);
+  	border-bottom: $table-paper--border;
+  	border-top: $table-paper--border;
+  	@include box-sizing();
+  	
+	&:hover{
+		background: $table-paper-row--hovercolor;
+		cursor: pointer;
+	}
+}
+
+.table-paper-row-avatar{
+	height: $table-paper-row-avatar--height;
+
+	.table-paper-cell{
+		$padding: element-offset($table-paper-row-avatar--height, get-font-height('body1'));
+  		padding: $padding 56px $padding 0;
+	}
+}
+
+.table-paper-header{
+	height: $table-paper-header--height;
+	border-bottom: $table-paper--border;
+  	border-top: $table-paper--border;
+  	@include box-sizing();
+
+	.table-paper-cell{
+		font-weight: $font-medium;
+		@extend .font-caption;
+	}
+	
+}
+
+.table-paper-cell{
+  display: table-cell;
+  @extend .font-body1;
+
+  $padding: element-offset($table-paper-row--height, get-font-height('body1'));
+  padding-top: $padding;
+  padding-bottom: $padding;
+  padding-right: $table-paper-cell--right-padding;
+
+  @include media-query($until: $mobile--breakpoint){
+  	padding: $padding 0;
+  }
+
+  @include media-query($from: $mobile--breakpoint, $until: $tablet--breakpoint){
+  	padding: $padding 20px $padding 0;
+  }
+  
+  &:first-of-type, &:nth-of-type(2){
+	padding-right: $table-paper--padding;
+	text-align: left;
+
+  }
+
+  &:first-of-type{
+  	padding-left: $table-paper--padding;
+  }
+  
+  &:last-of-type{
+	padding-right: $table-paper--padding;
+  }
+  
+}
+
+.table-paper-cell--right{
+	text-align:right;
+}
+
+.table-paper-cell--left{
+	text-align:left;
+}
+
+.table-paper-cell--center{
+	text-align:center;
+}
+
+.table-paper-cell-icon{
+	width: $icon--sizeSmall;
+	
+	padding-top:0;
+	padding-bottom:0;
+
+	.table-paper-icon{
+		margin: 0;
+	}
+}

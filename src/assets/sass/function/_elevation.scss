@@ -1,0 +1,3 @@
+@function get-elevation($component-name) {
+	@return map-get($component-elevation, $component-name);
+}

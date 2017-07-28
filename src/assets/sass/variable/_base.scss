@@ -1,0 +1,38 @@
+$text-color: #000;
+$font--baseFamily: 'Roboto', sans-serif;
+$prime-content--width: 72px;
+
+
+
+/// color pallets
+$color--primary : getColorByName('blue');
+$color--lightblue : #03A9F4;
+$color--accent : #FF4081;
+$color--dark : #000;
+$color--light : #FFF;
+
+
+/// page Style
+$page--padding: 8px;
+$page-header--fontSize : 24px; 
+$page-header--color: blue;
+$page-content--fontSize: 14px;
+
+
+$oneX:80px;
+
+// Text variables
+$dark-text-color: #000;
+$dark-primary-text-opacity: 8.7;
+$dark-secondary-text-opacity: 5.4;
+$dark-disable-hint-text-opacity: 3.8;
+$dark-divider-opacity: 1.2;
+
+$light-text-color: #fff;	
+$light-primary-text-opacity: 10;
+$light-secondary-text-opacity: 7;
+$light-disable-hint-text-opacity: 5;
+$light-divider-opacity: 1.2;
+
+$body-color: #fff !default;
+$component-color: #fff !default;

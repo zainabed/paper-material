@@ -1,0 +1,8 @@
+@each $row-key, $row-value in $row-alignment {
+	@each $column-key, $column-value in $column-alignment{
+		.#{$row-key}-#{$column-key} {
+			@include justfy-content($row-value);
+			@include align-items($row-value);
+		}
+	}
+} 
