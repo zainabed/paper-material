@@ -8,7 +8,8 @@ var files = require('../config/file.path.js');
 gulp.task('build-index', function() {
 	var index = gulp.src(files.index.src);
 	var cssSource = gulp.src(files.css.src + '/' + files.css.name);
-	var docCssSource = gulp.src(files.css.src + '/' + files.doc.sass.name);
+	var docCssSource = gulp.src(files.doc.sass.src + '/' + files.doc.sass.name);
+	console.log(docCssSource);
 	var jsSource = gulp.src(files.js.develop.src);
 	var jsLibSource = gulp.src(files.js.lib);
 	var source = stream(cssSource, docCssSource, jsLibSource, jsSource);

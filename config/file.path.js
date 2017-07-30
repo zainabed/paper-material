@@ -14,13 +14,14 @@ module.exports = {
 	},
 	css : {
 		src : 'css/**/*.js',
-		basePath : 'css',
+		basePath : 'css', 
 		name : packageJSON.name + '.css',
 	},
 	doc : {
 		buildPath : 'docs/build/',
 		sass: {
 			src: ['docs/app/assets/sass/**/*.scss'],
+			dest : 'build',
 			name: packageJSON.name +  '_docs.css',
 		}
 	},
@@ -85,6 +86,7 @@ module.exports = {
 			'build/' + packageJSON.name + '.js',
 			'build/' + packageJSON.name + '.template.js',
 			'build/' + packageJSON.name + '.css',
+			'build/' + packageJSON.name + '_docs.css',
 			'index.html'
 		]
 	},

@@ -50,7 +50,7 @@ gulp.task('build-doc-css', function(){
 		includePaths : files.sass.lib
 	}))
 	.pipe(rename(files.doc.sass.name))
-	.pipe(gulp.dest(files.sass.dest));
+	.pipe(gulp.dest(files.doc.sass.dest));
 });
 
 gulp.task('build-examples', function(){
