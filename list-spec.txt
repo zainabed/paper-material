@@ -1,6 +1,0 @@
-List	-- flex-container
-	
-	Row		-- flex-container--inline flex--1 row
-
-		primary-icon 			primary-text			secondary-icon
-			-- flex--initial			-- flex--1			-- flex--initial
